@@ -1,0 +1,126 @@
+<!-- Redesigned Tic Tac Toe Game -->
+<html>
+<head>
+  <title>Tic Tac Toe - Modern UI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      text-align: center;
+    }
+    h1 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 10px;
+      justify-content: center;
+    }
+    .cell {
+      width: 100px;
+      height: 100px;
+      font-size: 2em;
+      background-color: rgba(255,255,255,0.7);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .cell:hover {
+      background-color: #fff;
+    }
+    #status {
+      margin-top: 20px;
+      color: white;
+      font-size: 1.2em;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background-color: #ffffffcc;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tic Tac Toe</h1>
+    <div class="board" id="board"></div>
+    <div id="status"></div>
+    <button onclick="resetGame()">Restart</button>
+  </div>
+
+  <script>
+    const board = document.getElementById("board");
+    const status = document.getElementById("status");
+    let currentPlayer = "X";
+    let cells = Array(9).fill("");
+    let gameOver = false;
+
+    function renderBoard() {
+      board.innerHTML = "";
+      cells.forEach((val, i) => {
+        const cell = document.createElement("div");
+        cell.className = "cell";
+        cell.textContent = val;
+        cell.onclick = () => handleClick(i);
+        board.appendChild(cell);
+      });
+    }
+
+    function handleClick(i) {
+      if (cells[i] || gameOver) return;
+      cells[i] = currentPlayer;
+      renderBoard();
+      if (checkWin(currentPlayer)) {
+        status.textContent = `${currentPlayer} wins!`;
+        gameOver = true;
+      } else if (!cells.includes("")) {
+        status.textContent = "It's a draw!";
+        gameOver = true;
+      } else {
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+        status.textContent = `${currentPlayer}'s turn`;
+      }
+    }
+
+    function checkWin(p) {
+      const winPatterns = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6]
+      ];
+      return winPatterns.some(pattern => pattern.every(i => cells[i] === p));
+    }
+
+    function resetGame() {
+      cells = Array(9).fill("");
+      currentPlayer = "X";
+      gameOver = false;
+      status.textContent = "X's turn";
+      renderBoard();
+    }
+
+    resetGame();
+  </script>
+</body>
+</html>
