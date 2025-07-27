@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #0f0f0f;
-  color: #e0e0e0;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,32 +10,24 @@ body {
 }
 
 .container {
-  text-align: center;
-  background: #1e1e1e;
+  background: #1a1a1a;
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-  width: 90%;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  text-align: center;
   max-width: 400px;
+  width: 90%;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
   color: #00ffff;
-}
-
-.scoreboard {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
 }
 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 1rem;
 }
 
@@ -50,30 +42,30 @@ h1 {
   font-size: 2.5rem;
   color: #00ffff;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.3s;
 }
 
 .cell:hover {
   background: #444;
 }
 
+#status {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #cccccc;
+}
+
 button {
   padding: 10px 20px;
   font-size: 1rem;
-  border: none;
-  border-radius: 10px;
   background: #00ffff;
+  border: none;
   color: #000;
+  border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s;
 }
 
 button:hover {
   background: #00cccc;
-}
-
-#status {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: #ffffff;
 }
