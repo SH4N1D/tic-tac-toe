@@ -3,74 +3,63 @@
 }
 
 body {
-  margin: 0;
-  background-color: #121212;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
+  margin: 0;
+  background-color: #111;
+  color: white;
+}
+
+.container {
+  text-align: center;
 }
 
 h1 {
-  margin-bottom: 30px;
-  font-size: 2.5rem;
-  color: #00ffff;
-  text-shadow: 0 0 5px #00ffff;
+  margin-bottom: 20px;
 }
 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 10px;
+  grid-gap: 10px;
+  margin-bottom: 20px;
 }
 
 .cell {
   width: 100px;
   height: 100px;
-  background-color: #1f1f1f;
-  border: 2px solid #00ffff;
+  background-color: #222;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
-  cursor: pointer;
-  color: #00ffff;
-}
-
-.cell.X {
-  color: #ff6f61;
-}
-
-.cell.O {
-  color: #ffd700;
-}
-
-.winning-message {
-  display: none;
-  flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  font-size: 48px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s;
 }
 
-.winning-message.show {
-  display: flex;
+.cell:hover {
+  background-color: #333;
 }
 
-#restartButton {
-  background-color: #00ffff;
-  border: none;
-  color: #000;
-  font-weight: bold;
+.status {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+button {
   padding: 10px 20px;
-  margin-top: 10px;
+  font-size: 16px;
+  background: #444;
+  color: white;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
 }
 
-#restartButton:hover {
-  background-color: #00cccc;
+button:hover {
+  background: #666;
 }
