@@ -1,71 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0f0f0f;
+  background-color: #121212;
   color: #ffffff;
+  font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
-.container {
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
-  text-align: center;
-  max-width: 400px;
-  width: 90%;
-}
-
 h1 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
   color: #00ffff;
-  margin-bottom: 1rem;
+  text-shadow: 0 0 5px #00ffff;
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
   gap: 10px;
-  margin-bottom: 1rem;
 }
 
 .cell {
   width: 100px;
   height: 100px;
-  background: #2c2c2c;
-  border-radius: 12px;
+  background-color: #1f1f1f;
+  border: 2px solid #00ffff;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   font-size: 2.5rem;
-  color: #00ffff;
   cursor: pointer;
-  transition: background 0.3s;
+  color: #00ffff;
 }
 
-.cell:hover {
-  background: #444;
+.cell.X {
+  color: #ff6f61;
 }
 
-#status {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #cccccc;
+.cell.O {
+  color: #ffd700;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background: #00ffff;
+.winning-message {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.winning-message.show {
+  display: flex;
+}
+
+#restartButton {
+  background-color: #00ffff;
   border: none;
   color: #000;
-  border-radius: 10px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-button:hover {
-  background: #00cccc;
+#restartButton:hover {
+  background-color: #00cccc;
 }
