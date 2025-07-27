@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="controls">
+        <button id="theme-toggle">Dark Theme</button>
+        <button id="sound-toggle">Sound On</button>
+        <button id="mode-toggle">Vs Computer</button>
+    </div>
+    <div id="scoreboard">
+        <span id="score-x">X: 0</span>
+        <span id="score-o">O: 0</span>
+        <span id="score-draw">Draws: 0</span>
+    </div>
+    <div id="status"></div>
+    <div id="board">
+        <!-- 9 cells for the game board -->
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+    <button id="reset">Reset</button>
+    <script src="script.js"></script>
+</body>
+</html>

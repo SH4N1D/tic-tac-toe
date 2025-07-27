@@ -1,0 +1,159 @@
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.light {
+    background: #f7f7fa;
+    color: #181818;
+}
+
+/* Card view for board */
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-template-rows: repeat(3, 110px);
+    gap: 0;
+    margin: 40px auto 20px auto;
+    width: max-content;
+    background: #181818;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 8px rgba(0,0,0,0.08);
+    padding: 18px;
+    position: relative;
+}
+
+body.light #board {
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+}
+
+/* Cell styling */
+.cell {
+    background: transparent;
+    border: none;
+    font-size: 2.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 110px;
+    width: 110px;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border-radius: 16px;
+    box-shadow: 0 0 0 0 transparent;
+}
+
+body.light .cell {
+    color: #181818;
+    background: transparent;
+}
+
+.cell:hover {
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 0 8px 2px #ffd70044;
+}
+
+body.light .cell:hover {
+    background: #e7e7f7;
+    box-shadow: 0 0 8px 2px #4a90e244;
+}
+
+/* Grid lines for both themes */
+.cell {
+    border: 2px solid #444;
+}
+
+body.light .cell {
+    border: 2px solid #bbb;
+}
+
+.cell:nth-child(1), .cell:nth-child(2), .cell:nth-child(3) {
+    border-top: none;
+}
+.cell:nth-child(1), .cell:nth-child(4), .cell:nth-child(7) {
+    border-left: none;
+}
+.cell:nth-child(7), .cell:nth-child(8), .cell:nth-child(9) {
+    border-bottom: none;
+}
+.cell:nth-child(3), .cell:nth-child(6), .cell:nth-child(9) {
+    border-right: none;
+}
+
+#status {
+    margin: 10px 0;
+    font-size: 1.2em;
+    min-height: 24px;
+    color: #ffd700;
+    letter-spacing: 1px;
+}
+
+body.light #status {
+    color: #4a90e2;
+}
+
+/* Modern button style */
+#reset, .controls button {
+    padding: 10px 28px;
+    font-size: 1.1em;
+    margin: 8px 8px 16px 8px;
+    cursor: pointer;
+    background: linear-gradient(90deg,#232323 60%,#444 100%);
+    color: #ffd700;
+    border: none;
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+#reset:hover, .controls button:hover {
+    background: linear-gradient(90deg,#ffd700 60%,#e7e7f7 100%);
+    color: #232323;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+body.light #reset, body.light .controls button {
+    background: linear-gradient(90deg,#e7e7f7 60%,#fff 100%);
+    color: #4a90e2;
+}
+
+body.light #reset:hover, body.light .controls button:hover {
+    background: linear-gradient(90deg,#4a90e2 60%,#e7e7f7 100%);
+    color: #fff;
+}
+
+.controls {
+    margin-bottom: 10px;
+}
+
+#scoreboard {
+    margin: 10px auto 10px auto;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+#scoreboard span {
+    background: transparent;
+    padding: 4px 18px;
+    border-radius: 6px;
+    color: #ffd700;
+    font-weight: 600;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    border: none;
+}
+
+body.light #scoreboard span {
+    background: #fff;
+    color: #4a90e2;
+    border: 1px solid #bbb;
+}
